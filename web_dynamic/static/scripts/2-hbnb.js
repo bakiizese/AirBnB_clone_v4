@@ -21,12 +21,16 @@ $(document).ready(function(){
         }
         $('#h4tag').text(txt);
     });
-    /*
-    $.agax({
+    $.ajax({
         methods: 'GET',
         url: 'http://0.0.0.0:5001/api/v1/status/',
     }).done(function(data){
-
-    })
-    */
+        if (data.status == 'OK'){
+            console.log(data.status);
+            $('div#api_status').addClass('available');
+        } else {
+            $('div#api_status').removeClass('available');
+        }
+    });
+    
 });
