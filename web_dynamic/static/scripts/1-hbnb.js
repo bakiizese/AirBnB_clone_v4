@@ -1,3 +1,3 @@
-$(document).read(function(){
-    alert('try')
+$('document').read(function(){
+    alert('try');
 });
