@@ -2,12 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="../static/scripts/1-hbnb.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
-		$('document').read(function(){
-			alert('try');
-		});
-	</script>
     <link rel="stylesheet" type="text/css" href="../static/styles/4-common.css?{{cache_id}}">
     <link rel="stylesheet" type="text/css" href="../static/styles/3-header.css?{{cache_id}}">
     <link rel="stylesheet" type="text/css" href="../static/styles/3-footer.css?{{cache_id}}">
@@ -43,11 +39,11 @@
 	</div>
 	<div class="amenities">
 	  <h3>Amenities</h3>
-	  <h4>&nbsp;</h4>
+	  <h4 id="h4tag">&nbsp;</h4>
 	  <div class="popover">
 	    <ul>
 	      {% for amenity in amenities %}
-	      <li><input type="checkbox" data-name=amenity.name data-id=amenity.id>{{ amenity.name }}</li>
+	      <li><input type="checkbox" class="chlist" data-name="{{amenity.name}}" data-id="{{amenity.id}}">{{ amenity.name }}</li>
 	      {% endfor %}
 	    </ul>
 	  </div>

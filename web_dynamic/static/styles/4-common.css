@@ -9,3 +9,17 @@ body .container {
     max-width: 1000px;
     margin: 30px auto;
 }
+#h4tag {
+    width: 250px;
+    height: 17px;
+    overflow: hidden;
+    margin-left: 15%;
+    padding: 0;
+    white-space: nowrap;
+  }
+#h4tag {
+    text-overflow: ellipsis;
+  }
+.chlist {
+    margin-right: 10px;
+}
