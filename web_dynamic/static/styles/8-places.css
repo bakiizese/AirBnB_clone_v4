@@ -99,3 +99,10 @@
 .user {
   margin-bottom: 1.5%;
 }
+
+.reviews h2{
+	size: 16px;	
+	border-bottom: 1px solid #DDDDDD;
+    margin-top: 25px;
+    text-align: left;
+}
