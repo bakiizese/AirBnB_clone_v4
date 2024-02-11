@@ -16,10 +16,36 @@ body .container {
     margin-left: 15%;
     padding: 0;
     white-space: nowrap;
-  }
-#h4tag {
+    margin-bottom: 7.5%;
+}
+#citytag{
+  width: 200px;
+  height: 17px;
+  overflow: hidden;
+  margin-left: 5.5%;
+  margin-top: 0%;
+  margin-bottom: .1%;
+  padding: 0;
+  white-space: nowrap;
+}
+
+#statetag{
+  width: 200px;
+  height: 17px;
+  overflow: hidden;
+  margin-left: 5.5%;
+  margin-top: 0%;
+  margin-bottom: .7%;
+  padding: 0;
+  white-space: nowrap;
+}
+
+#h4tag, #citytag, #statetag{
     text-overflow: ellipsis;
   }
 .chlist {
     margin-right: 10px;
+}
+.citylist, .statelist {
+  margin-right:10px;
 }

@@ -40,6 +40,7 @@ button:hover {
     margin-top: 0;
     font-weight: 400;
     font-size: 14px;
+    margin-bottom: 0;
 }
 .locations {
     height: 100%;
@@ -53,7 +54,7 @@ button:hover {
 
 .popover {
     visibility: hidden;
-    width: 100%;
+    width: 98%;
     border: 1px solid #DDDDDD;
     border-radius: 4px;
     background: #FAFAFA;

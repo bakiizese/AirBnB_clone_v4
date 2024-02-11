@@ -20,6 +20,57 @@ $(document).ready(function(){
         }
         $('#h4tag').text(txt);
     });
+    //$('.statelist').change(function(){
+      //  alert('inin');
+    //});
+
+    //$('#statetag').text('inin');
+    let stateCheckList = {};
+    $('.statelist').change(function(){
+        //console.log($(this).data('name'));
+
+        let name = $(this).data('name');
+        let ids = $(this).data('id');
+        if ($(this).prop('checked')){
+            stateCheckList[ids] = name;
+        } else {
+            delete stateCheckList[ids];
+        }
+        let txt = '';
+        for (let key in stateCheckList){
+            let value = stateCheckList[key];
+            if (txt === ''){
+                txt = 'ST: ' + txt + value;
+            } else {
+                txt = txt + ', ' + value;
+            }
+        }
+        console.log(txt);
+        $('#statetag').text(txt);
+    });
+
+
+    let cityCheckedList = {};
+    $('.citylist').change(function(){
+        let name = $(this).data('name');
+        let ids = $(this).data('id');
+        if ($(this).prop('checked')){
+            cityCheckedList[ids] = name;
+        } else {
+            delete cityCheckedList[ids];
+        }
+        let txt = '';
+        for (let key in cityCheckedList){
+            let value = cityCheckedList[key];
+            if (txt === ''){
+                txt = 'CT: ' + txt + value;
+            } else {
+                txt = txt + ', ' + value;
+            }
+        }
+        $('#citytag').text(txt);
+    });
+    
     $.ajax({
         methods: 'GET',
         url: 'http://0.0.0.0:5001/api/v1/status/',
@@ -63,13 +114,26 @@ $(document).ready(function(){
     }
     searchs();
     $('button').click(function(){
-        let jamdict= {}
-        let amlist = []
+        let jamdict= {};
+        let amlist = [];
+        let citylist = [];
+        let statelist = [];
         for (let key in checked_dict) {
             let value = checked_dict[key];
             amlist.push(key);
         }
+        for (let key in stateCheckList) {
+            let value = stateCheckList[key];
+            statelist.push(key);
+        }
+        for (let key in cityCheckedList) {
+            let value = cityCheckedList[key];
+            citylist.push(key);
+        }
+        
         jamdict['amenities'] = amlist;
+        jamdict['states'] = statelist;
+        jamdict['cities'] = citylist;
 
         searchs(jamdict);
     });
